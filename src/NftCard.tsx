@@ -1,17 +1,26 @@
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Typography from '@mui/material/Typography';
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Typography from "@mui/material/Typography";
 
 type NftCardProps = {
-  imageUrl: string,
-  imageDescription: string,
-  title: string
-}
+  imageUrl: string;
+  imageDescription: string;
+  title: string;
+  onOpenModal: (
+    event: React.MouseEvent<HTMLButtonElement> | KeyboardEvent
+  ) => void;
+};
 
-const NftCard = ({imageUrl, imageDescription, title } : NftCardProps) => (<Card sx={{ maxWidth: 345, marginTop: 2 }}>
+const NftCard = ({
+  imageUrl,
+  imageDescription,
+  title,
+  onOpenModal,
+}: NftCardProps) => (
+  <Card sx={{ maxWidth: 345, marginTop: 2 }}>
     <CardMedia
       component="img"
       alt={imageDescription}
@@ -24,8 +33,16 @@ const NftCard = ({imageUrl, imageDescription, title } : NftCardProps) => (<Card 
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small" variant="contained" sx={{ backgroundColor: 'black', color: 'white'}}>View NFT</Button>
+      <Button
+        size="small"
+        variant="contained"
+        sx={{ backgroundColor: "black", color: "white" }}
+        onClick={onOpenModal}
+      >
+        View NFT
+      </Button>
     </CardActions>
-  </Card>);
+  </Card>
+);
 
 export default NftCard;
