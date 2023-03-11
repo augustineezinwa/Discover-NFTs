@@ -44,7 +44,7 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
           borderRadius: 0,
           maxWidth: "100%",
           minWidth: "25vw",
-          overflow: "scroll",
+          overflowY: "scroll"
         }}
       >
         <CardMedia
