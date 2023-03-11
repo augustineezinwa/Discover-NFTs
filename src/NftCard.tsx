@@ -7,10 +7,11 @@ import Typography from '@mui/material/Typography';
 
 type NftCardProps = {
   imageUrl: string,
-  imageDescription: string
+  imageDescription: string,
+  title: string
 }
 
-const NftCard = ({imageUrl, imageDescription} : NftCardProps) => (<Card sx={{ maxWidth: 345, marginTop: 2 }}>
+const NftCard = ({imageUrl, imageDescription, title } : NftCardProps) => (<Card sx={{ maxWidth: 345, marginTop: 2 }}>
     <CardMedia
       component="img"
       alt={imageDescription}
@@ -19,16 +20,11 @@ const NftCard = ({imageUrl, imageDescription} : NftCardProps) => (<Card sx={{ ma
     />
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
-        Lizard
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
+        {title.length > 23 ? `${title.substring(0, 22)} ...` : title}
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">Share</Button>
-      <Button size="small">Learn More</Button>
+      <Button size="small" variant="contained" sx={{ backgroundColor: 'black', color: 'white'}}>View NFT</Button>
     </CardActions>
   </Card>);
 
