@@ -26,3 +26,9 @@ code {
 .search {
   color: #666666;
 }
+
+.idle {
+  display: flex;
+  justify-content: center;
+  margin: 12vh auto;
+}
