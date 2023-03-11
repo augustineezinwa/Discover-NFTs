@@ -33,7 +33,7 @@ const App = () => {
     <>
       <Container maxWidth="xl">
         <Box sx={{ bgcolor: '#ffff', minHeight: '100vh', padding: 5, mt: 5, flexGrow: 1, borderRadius: 5 }}>
-          <h1 className="header">Discover{'  '}<ReactLogo />{'  '}NFTs</h1>
+          <h1 className="header">Discover<ReactLogo />NFTs</h1>
           <div>
             <TextField value={walletAddress} fullWidth label="# Enter wallet address" id="walletAddress" variant="outlined" sx={{ mb: 2 }} onChange={(e) => setWalletAdress(e.target.value)} />
           </div>
