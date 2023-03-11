@@ -25,6 +25,7 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
       open={isOpen}
       maxWidth="sm"
       TransitionComponent={Transition}
+      scroll="body"
     >
       <DialogTitle>NFT Details</DialogTitle>
       <IconButton
@@ -50,7 +51,6 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
         <CardMedia
           component="img"
           alt="green iguana"
-          height="300"
           image={data.image_url}
         />
         <CardContent>
