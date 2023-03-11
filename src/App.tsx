@@ -31,7 +31,6 @@ const App = () => {
     );
     const data = await response.json();
     setNftData(data.assets);
-    console.log(data);
     if(response.status === 400) setError(INVALID_WALLET_ADDRESS_ERROR);
     } catch(e) {
       setError("Sorry, we lost internet connection to you, try reconnecting.");

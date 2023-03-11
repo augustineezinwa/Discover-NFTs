@@ -8,18 +8,23 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import WorkIcon from "@mui/icons-material/Work";
 
 type DetailListProps = {
- tokenId: string;
- contractAddress: string;
- ownerAddress: string | null
+  tokenId: string;
+  contractAddress: string;
+  ownerAddress: string | null;
 };
 
 const DetailList = ({
-    tokenId,
-    contractAddress,
-    ownerAddress
+  tokenId,
+  contractAddress,
+  ownerAddress,
 }: DetailListProps) => (
-    <List
-    sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper", overflowX: "scroll" }}
+  <List
+    sx={{
+      width: "100%",
+      maxWidth: 360,
+      bgcolor: "background.paper",
+      overflowX: "scroll",
+    }}
   >
     <ListItem>
       <ListItemAvatar>
@@ -27,10 +32,7 @@ const DetailList = ({
           <WorkIcon />
         </Avatar>
       </ListItemAvatar>
-      <ListItemText
-        primary="Token ID"
-        secondary={tokenId}
-      />
+      <ListItemText primary="Token ID" secondary={tokenId} />
     </ListItem>
     <ListItem>
       <ListItemAvatar>
@@ -38,20 +40,17 @@ const DetailList = ({
           <CloudIcon />
         </Avatar>
       </ListItemAvatar>
-      <ListItemText
-        primary="Contract Address"
-        secondary={contractAddress}
-      />
+      <ListItemText primary="Contract Address" secondary={contractAddress} />
     </ListItem>
     <ListItem>
       <ListItemAvatar>
         <Avatar>
-          <BeachAccessIcon/>
+          <BeachAccessIcon />
         </Avatar>
       </ListItemAvatar>
       <ListItemText
         primary="Owner Address"
-        secondary={ownerAddress || 'Not Available'}
+        secondary={ownerAddress || "Not Available"}
       />
     </ListItem>
   </List>
