@@ -1,33 +1,16 @@
 import React from "react";
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import Slide from "@mui/material/Slide";
-import IconButton from "@mui/material/IconButton";
-import { TransitionProps } from "@mui/material/transitions";
-import CloseIcon from "@mui/icons-material/Close";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
-import WorkIcon from "@mui/icons-material/Work";
-import BeachAccessIcon from "@mui/icons-material/BeachAccess";
-
 import Button from "@mui/material/Button";
+import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+import DetailList from "./DetailList";
+import Transition from "./Animation/Transistion";
 
 type NftModalProps = {
   onOpenModal: (isOpen: boolean) => void;
@@ -77,35 +60,11 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
           <Typography variant="body2" color="text.secondary">
             {data.description}
           </Typography>
-
-          <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-          >
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <WorkIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="Owner Address"
-                secondary={data.asset_contract.owner || "Not Available"}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <BeachAccessIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="Created Date"
-                secondary={new Date(
-                  data.asset_contract.created_date
-                ).toDateString()}
-              />
-            </ListItem>
-          </List>
+          <DetailList
+            tokenId={data.token_id}
+            contractAddress={data.asset_contract.address}
+            ownerAddress={data?.owner?.address}
+          />
         </CardContent>
         <CardActions>
           <Button
@@ -113,9 +72,11 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
             variant="contained"
             sx={{ backgroundColor: "black", color: "white" }}
             disabled={!data.permalink}
-            onClick={() => window.open(data.permalink, '_blank', 'noopener,noreferrer')}
+            onClick={() =>
+              window.open(data.permalink, "_blank", "noopener,noreferrer")
+            }
           >
-            Purchase ON OPENSEA
+            PURCHASE ON OPENSEA
           </Button>
         </CardActions>
       </Card>

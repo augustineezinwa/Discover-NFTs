@@ -29,7 +29,7 @@ const NftCard = ({
     />
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
-        {title.length > 23 ? `${title.substring(0, 22)} ...` : title}
+        {title?.length > 23 ? `${title.substring(0, 22)} ...` : title}
       </Typography>
     </CardContent>
     <CardActions>
