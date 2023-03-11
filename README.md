@@ -1,10 +1,21 @@
-# Getting Started with Create React App
+# Discover NFT React application
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9d1c6154-36c4-47d6-acaa-9cef0a01f17d/deploy-status)](https://app.netlify.com/sites/look-up-nfts/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This application can be found live on this url: https://develop--look-up-nfts.netlify.app/
+- This application gives users the ability to lookup and purchase nfts by just providing their wallet address.
+
+### Screenshots (Desktop):
+
+<img src="https://i.paste.pics/0ed67fa08fdd24e35e2ae29912c27846.png"/>
+
+### On Mobile:
+<img src="https://i.paste.pics/123239111936afa4c9e06d1e8cc6de3e.png">
+
 
 ## Available Scripts
-
-In the project directory, you can run:
+To start this project:
+Clone the repository:
+In the root of the project directory, you can run:
 
 ### `npm start`
 
@@ -29,18 +40,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
