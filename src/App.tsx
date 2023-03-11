@@ -6,6 +6,7 @@ import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import NftCard from './NftCard';
+import NftModal from './NftModal';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -15,8 +16,10 @@ import '@fontsource/roboto/700.css';
 
 
 const App = () => {
-  const [walletAddress, setWalletAdress] = useState<string>('');
+  const [walletAddress, setWalletAdress] = useState('');
   const [nftData, setNftData] = useState<Array<any>>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>();
 
   const fetchNft = async (walletAddress: string) => {
     const response = await fetch(`https://api.opensea.io/api/v1/assets?owner=${walletAddress}`);
@@ -29,8 +32,14 @@ const App = () => {
     fetchNft(walletAddress);
   }, [walletAddress]);
 
+  const loadModal = (data: any) => {
+    setIsModalOpen(true);
+    setModalData(data);
+  }
+
   return (
     <>
+      {isModalOpen && <NftModal isOpen={isModalOpen} onOpenModal={setIsModalOpen} data={modalData}/>}
       <Container maxWidth="xl">
         <Box sx={{ bgcolor: '#ffff', minHeight: '100vh', padding: 5, mt: 5, flexGrow: 1, borderRadius: 5 }}>
           <h1 className="header">Discover<ReactLogo />NFTs</h1>
@@ -44,7 +53,7 @@ const App = () => {
           <Grid container spacing={2}>
             {nftData?.map((data, index) => (
               <Grid key={index} item xs={12} sm={6} md={4} lg={3} xl={3}>
-                <NftCard title={data.name} imageDescription="" imageUrl={data.image_url} />
+                <NftCard title={data.name} imageDescription="" imageUrl={data.image_url} onOpenModal={e => loadModal(data)}/>
               </Grid>
             ))}
           </Grid>
