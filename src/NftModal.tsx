@@ -70,7 +70,6 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
           <Button
             size="medium"
             variant="contained"
-            sx={{ backgroundColor: "black", color: "white" }}
             disabled={!data.permalink}
             onClick={() =>
               window.open(data.permalink, "_blank", "noopener,noreferrer")

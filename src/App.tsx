@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -34,7 +34,8 @@ const App = () => {
 
   const INVALID_WALLET_ADDRESS_ERROR = 'Invalid wallet address, please ensure you input the wallet address in the correct format.';
 
-  const fetchNft = async (walletAddress: string) => {
+  const fetchNft = async (walletAddress: string, e: React.MouseEvent<HTMLButtonElement> | KeyboardEvent | FormEvent) => {
+    e.preventDefault();
     setError("");
     try {
       const response = await fetch(
@@ -55,7 +56,7 @@ const App = () => {
 
   return (
     <>
-      <Wishes width="50%" height="50%" className="bg" />
+      <Wishes width="70%" height="70%" className="bg" />
       <ThemeProvider theme={theme}>
         {isModalOpen && (
           <NftModal
@@ -80,12 +81,12 @@ const App = () => {
                 Discover NFTs on OpenSea
               </Typography>
 
-              <form onSubmit={() => fetchNft(walletAddress)}>
+              <form onSubmit={(e) => fetchNft(walletAddress, e)}>
                 <div className="walletBox">
                   <label htmlFor="walletAddress" className="labelText">Enter Wallet Address:</label>
                   <span>
                     <input className="walletAddress" value={walletAddress} type="text" name="walletAddress" id="walletAddress" onChange={(e) => setWalletAdress(e.target.value)} />
-                    <Button className="searchButton" size="small" variant="contained" onClick={() => fetchNft(walletAddress)}>Search</Button>
+                    <Button className="searchButton" size="small" variant="contained" onClick={(e) => fetchNft(walletAddress, e)}>Search</Button>
                   </span>
                 </div>
               </form>

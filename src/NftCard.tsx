@@ -27,7 +27,7 @@ const NftCard = ({
       image={imageUrl}
       height={200}
     />
-    <CardContent>
+    <CardContent sx={{paddingBottom: 0}}>
       <Typography gutterBottom variant="h5" component="div">
         {title?.length > 23 ? `${title.substring(0, 22)} ...` : title}
       </Typography>
