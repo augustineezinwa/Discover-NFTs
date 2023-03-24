@@ -20,12 +20,12 @@ const NftCard = ({
   title,
   onOpenModal,
 }: NftCardProps) => (
-  <Card sx={{ maxWidth: 345, marginTop: 2 }}>
+  <Card sx={{ marginTop: 2 }}>
     <CardMedia
       component="img"
       alt={imageDescription}
-      height="140"
       image={imageUrl}
+      height={200}
     />
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
@@ -34,9 +34,9 @@ const NftCard = ({
     </CardContent>
     <CardActions>
       <Button
-        size="small"
+        size="large"
         variant="contained"
-        sx={{ backgroundColor: "black", color: "white" }}
+        sx={{ marginTop: 0 }}
         onClick={onOpenModal}
       >
         View NFT
