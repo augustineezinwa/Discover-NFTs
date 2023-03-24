@@ -6,10 +6,10 @@
 
 ### Screenshots (Desktop):
 
-<img src="https://i.paste.pics/0ed67fa08fdd24e35e2ae29912c27846.png"/>
+<img src="https://i.paste.pics/2692b81e00e0fdf58802acd9455cf279.png"/>
 
 ### On Mobile:
-<img src="https://i.paste.pics/123239111936afa4c9e06d1e8cc6de3e.png">
+<img src="https://i.paste.pics/a92a81c07077c2a39f416d2123b0f972.png"/>
 
 
 ## Available Scripts
