@@ -6,7 +6,7 @@
 
 ### Screenshots (Desktop):
 
-<img src="https://i.paste.pics/2692b81e00e0fdf58802acd9455cf279.png"/>
+<img src="https://i.paste.pics/bf0a0c11aa53efd785661571dda001fe.png"/>
 
 ### On Mobile:
 <img src="https://i.paste.pics/a92a81c07077c2a39f416d2123b0f972.png"/>
