@@ -61,7 +61,7 @@ input[type="text"] {
 .bg {
   position: absolute;
   right: 0;
-  top: 25%;
+  top: 35%;
   z-index: -1;
 }
 
@@ -127,5 +127,9 @@ input[type="text"] {
     margin-top: 0;
     width: 100%;
     margin: 0;
+  }
+
+  .bg {
+    top: 25%;
   }
 }
