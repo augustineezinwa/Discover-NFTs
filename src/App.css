@@ -81,7 +81,7 @@ input[type="text"] {
   line-height: 51px;
   color: #7B1384;
   align-self: flex-start;
-  margin-left: 31vw;
+  margin: auto;
   stroke: black;
   stroke-width: 10px;
 }
@@ -130,6 +130,6 @@ input[type="text"] {
   }
 
   .bg {
-    top: 25%;
+    opacity: 0.4;
   }
 }
