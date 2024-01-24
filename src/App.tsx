@@ -39,7 +39,14 @@ const App = () => {
     setError("");
     try {
       const response = await fetch(
-        `https://api.opensea.io/api/v1/assets?owner=${walletAddress}`
+        `https://api.opensea.io/api/v1/assets?owner=${walletAddress}`,
+        {
+          headers: {
+            'x-api-key': process.env.REACT_APP_API_KEY || '',
+            'Content-Type': 'application/json', // You can adjust the Content-Type based on your API requirements
+            // Add any other headers if needed
+          },
+        }
       );
       const data = await response.json();
       setNftData(data.assets);
