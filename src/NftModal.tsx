@@ -19,6 +19,7 @@ type NftModalProps = {
 };
 
 const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
+  console.log(data);
   return (
     <Dialog
       onClose={(e) => onOpenModal(false)}
@@ -61,8 +62,8 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
             {data.description}
           </Typography>
           <DetailList
-            tokenId={data.token_id}
-            contractAddress={data.asset_contract.address}
+            tokenId={data.identifier}
+            contractAddress={data.contract}
             ownerAddress={data?.owner?.address}
           />
         </CardContent>
@@ -70,9 +71,10 @@ const NftModal = ({ onOpenModal, isOpen, data }: NftModalProps) => {
           <Button
             size="medium"
             variant="contained"
-            disabled={!data.permalink}
+            disabled={!data.opensea_url}
             onClick={() =>
-              window.open(data.permalink, "_blank", "noopener,noreferrer")
+              window.open(data.opensea_url
+                , "_blank", "noopener,noreferrer")
             }
           >
             PURCHASE ON OPENSEA
