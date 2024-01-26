@@ -39,7 +39,7 @@ const App = () => {
     setError("");
     try {
       const response = await fetch(
-        `https://api.opensea.io/api/v1/assets?owner=${walletAddress}`,
+        `https://api.opensea.io/api/v2/chain/ethereum/account/${walletAddress}/nfts`,
         {
           headers: {
             'x-api-key': process.env.REACT_APP_API_KEY || '',
@@ -49,7 +49,7 @@ const App = () => {
         }
       );
       const data = await response.json();
-      setNftData(data.assets);
+      setNftData(data.nfts);
       if (response.status === 400) setError(INVALID_WALLET_ADDRESS_ERROR);
     } catch (e) {
       setError("Sorry, we lost internet connection to you, try reconnecting.");
