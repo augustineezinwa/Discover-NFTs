@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -8,56 +8,22 @@ import NftCard from "../NftCard";
 import Typography from "@mui/material/Typography";
 import Wishes from "../Wishes";
 import GameLoading from "../GameLoading";
+import { useSearchState } from "../context/SearchStateContext";
 
 const INVALID_WALLET_ADDRESS_ERROR =
   "Invalid wallet address, please ensure you input the wallet address in the correct format.";
-const SEARCH_STATE_STORAGE_KEY = "discover-nfts:search-state";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [walletAddress, setWalletAdress] = useState("");
-  const [nftData, setNftData] = useState<Array<any>>();
-  const [error, setError] = useState("");
+  const {
+    walletAddress,
+    setWalletAddress,
+    nftData,
+    setNftData,
+    error,
+    setError,
+  } = useSearchState();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSearchStateHydrated, setIsSearchStateHydrated] = useState(false);
-
-  useEffect(() => {
-    try {
-      const rawState = sessionStorage.getItem(SEARCH_STATE_STORAGE_KEY);
-      if (!rawState) return;
-      const parsedState = JSON.parse(rawState);
-
-      if (typeof parsedState.walletAddress === "string") {
-        setWalletAdress(parsedState.walletAddress);
-      }
-      if (Array.isArray(parsedState.nftData)) {
-        setNftData(parsedState.nftData);
-      }
-      if (typeof parsedState.error === "string") {
-        setError(parsedState.error);
-      }
-    } catch {
-      // Ignore invalid session state.
-    } finally {
-      setIsSearchStateHydrated(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!isSearchStateHydrated) return;
-    try {
-      sessionStorage.setItem(
-        SEARCH_STATE_STORAGE_KEY,
-        JSON.stringify({
-          walletAddress,
-          nftData: nftData ?? [],
-          error,
-        })
-      );
-    } catch {
-      // Ignore storage write errors.
-    }
-  }, [walletAddress, nftData, error, isSearchStateHydrated]);
 
   const fetchNft = async (
     address: string,
@@ -145,7 +111,7 @@ const HomePage = () => {
                     name="walletAddress"
                     id="walletAddress"
                     placeholder="0x..."
-                    onChange={(e) => setWalletAdress(e.target.value)}
+                    onChange={(e) => setWalletAddress(e.target.value)}
                     disabled={isLoading}
                     aria-describedby="wallet-hint"
                   />

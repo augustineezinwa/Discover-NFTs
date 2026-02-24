@@ -203,3 +203,65 @@
     font-size: 16px; /* avoids zoom on iOS */
   }
 }
+
+.themeToggleButton {
+  position: fixed !important;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1200;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(123, 19, 132, 0.25) !important;
+  color: #7b1384 !important;
+}
+
+.themeToggleButton:hover {
+  background: rgba(123, 19, 132, 0.12) !important;
+}
+
+body.dark-mode .themeToggleButton {
+  background: rgba(35, 38, 48, 0.95) !important;
+  border-color: rgba(145, 152, 173, 0.35) !important;
+  color: #e6e9f2 !important;
+}
+
+body.dark-mode .appTitle,
+body.dark-mode .labelText,
+body.dark-mode .search,
+body.dark-mode .idle {
+  color: #e6e9f2 !important;
+  text-shadow: none;
+}
+
+body.dark-mode .appTitle,
+body.dark-mode .labelText {
+  font-weight: 600;
+}
+
+body.dark-mode .searchInputGroup {
+  background: #2b2f3b;
+  border-color: rgba(145, 152, 173, 0.35);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .walletAddress {
+  background-color: #2b2f3b;
+  color: #e6e9f2;
+}
+
+body.dark-mode .walletAddress::placeholder {
+  color: #a6acc0;
+}
+
+body.dark-mode .searchButton {
+  background: linear-gradient(145deg, #ab47bc 0%, #8d2ca0 50%, #6a1b7a 100%) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .searchButton:hover:not(:disabled) {
+  background: linear-gradient(145deg, #ba68c8 0%, #9c27b0 50%, #7b1384 100%) !important;
+}
+
+body.dark-mode .bg {
+  opacity: 0.35;
+  filter: contrast(1.05) saturate(0.9) brightness(0.9);
+}

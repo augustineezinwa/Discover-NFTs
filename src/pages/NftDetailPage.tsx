@@ -179,7 +179,14 @@ const NftDetailPage = () => {
             </Box>
 
             <Box className="nft-detail-page__media-section">
-              <Box className="nft-detail-page__image-wrap">
+              <Box
+                className="nft-detail-page__image-wrap"
+                style={
+                  nft.image_url
+                    ? { backgroundImage: `url(${nft.image_url})` }
+                    : undefined
+                }
+              >
                 {nft.image_url ? (
                   <img
                     src={nft.image_url}
