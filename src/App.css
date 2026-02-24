@@ -220,15 +220,15 @@
 
 body.dark-mode .themeToggleButton {
   background: rgba(35, 38, 48, 0.95) !important;
-  border-color: rgba(145, 152, 173, 0.35) !important;
-  color: #e6e9f2 !important;
+  border-color: rgba(184, 191, 212, 0.42) !important;
+  color: #f2f4fa !important;
 }
 
 body.dark-mode .appTitle,
 body.dark-mode .labelText,
 body.dark-mode .search,
 body.dark-mode .idle {
-  color: #e6e9f2 !important;
+  color: #f2f4fa !important;
   text-shadow: none;
 }
 
@@ -239,17 +239,17 @@ body.dark-mode .labelText {
 
 body.dark-mode .searchInputGroup {
   background: #2b2f3b;
-  border-color: rgba(145, 152, 173, 0.35);
+  border-color: rgba(184, 191, 212, 0.42);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
 body.dark-mode .walletAddress {
   background-color: #2b2f3b;
-  color: #e6e9f2;
+  color: #f2f4fa;
 }
 
 body.dark-mode .walletAddress::placeholder {
-  color: #a6acc0;
+  color: #c4cadb;
 }
 
 body.dark-mode .searchButton {

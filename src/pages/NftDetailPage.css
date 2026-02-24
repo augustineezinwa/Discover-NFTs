@@ -388,7 +388,7 @@ body.dark-mode .nft-detail-page {
 
 body.dark-mode .nft-detail-page__shell {
   background: #242833;
-  border-color: rgba(145, 152, 173, 0.35);
+  border-color: rgba(184, 191, 212, 0.42);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
 }
 
@@ -396,7 +396,7 @@ body.dark-mode .nft-detail-page__media-section,
 body.dark-mode .nft-detail-page__description,
 body.dark-mode .nft-detail-page__data-grid,
 body.dark-mode .nft-detail-page__pill {
-  border-color: rgba(145, 152, 173, 0.35);
+  border-color: rgba(184, 191, 212, 0.42);
 }
 
 body.dark-mode .nft-detail-page__content-section,
@@ -411,21 +411,33 @@ body.dark-mode .nft-detail-page__tag,
 body.dark-mode .nft-detail-page__pill-label,
 body.dark-mode .nft-detail-page__data-label,
 body.dark-mode .nft-detail-page__back-btn {
-  color: #e6e9f2 !important;
+  color: #f2f4fa !important;
 }
 
 body.dark-mode .nft-detail-page__description,
 body.dark-mode .nft-detail-page__data-value,
 body.dark-mode .nft-detail-page__pill-value {
-  color: #c4cada;
+  color: #d9deec;
 }
 
 body.dark-mode .nft-detail-page__tag {
-  background: rgba(182, 128, 208, 0.18);
-  border-color: rgba(182, 128, 208, 0.42);
-  color: #e9d4f2 !important;
+  background: rgba(123, 19, 132, 0.22);
+  border-color: rgba(210, 172, 230, 0.7);
+  color: #f2f4fa !important;
+  box-shadow: 0 0 0 1px rgba(123, 19, 132, 0.25) inset;
 }
 
 body.dark-mode .nft-detail-page__image-wrap {
   background-color: #262a36;
+}
+
+body.dark-mode .nft-detail-page__secondary-cta {
+  color: #f2f4fa !important;
+  border-color: rgba(210, 172, 230, 0.7) !important;
+  background: rgba(123, 19, 132, 0.22) !important;
+}
+
+body.dark-mode .nft-detail-page__secondary-cta:hover {
+  border-color: rgba(222, 191, 238, 0.9) !important;
+  background: rgba(123, 19, 132, 0.34) !important;
 }

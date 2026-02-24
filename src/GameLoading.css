@@ -80,6 +80,42 @@
   animation: game-loading-blink 1.4s ease-in-out infinite;
 }
 
+body.dark-mode .game-loading__core {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f4d7fb,
+    #c25dd4 42%,
+    #9c27b0 72%,
+    #7b1384
+  );
+  box-shadow:
+    0 0 24px rgba(194, 93, 212, 0.85),
+    0 0 52px rgba(123, 19, 132, 0.55),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .game-loading__ring {
+  border-top-color: #d48ae5;
+  border-right-color: rgba(212, 138, 229, 0.45);
+}
+
+body.dark-mode .game-loading__ring--2 {
+  border-top-color: #b85ccc;
+  border-right-color: rgba(184, 92, 204, 0.35);
+}
+
+body.dark-mode .game-loading__ring--3 {
+  border-top-color: #9c27b0;
+  border-right-color: rgba(156, 39, 176, 0.4);
+}
+
+body.dark-mode .game-loading__text {
+  color: #f2f4fa !important;
+  text-shadow:
+    0 0 16px rgba(156, 39, 176, 0.35),
+    0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
 @keyframes game-loading-pulse {
   0%,
   100% {

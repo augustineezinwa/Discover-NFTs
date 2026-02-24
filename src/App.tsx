@@ -14,18 +14,24 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./App.css";
 
-const DARK_MODE_STORAGE_KEY = "discover-nfts:dark-mode";
-
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const stored = localStorage.getItem(DARK_MODE_STORAGE_KEY);
-    return stored === "true";
-  });
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 
   useEffect(() => {
     document.body.classList.toggle("dark-mode", isDarkMode);
-    localStorage.setItem(DARK_MODE_STORAGE_KEY, String(isDarkMode));
   }, [isDarkMode]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (event: MediaQueryListEvent) => {
+      setIsDarkMode(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", onChange);
+    return () => mediaQuery.removeEventListener("change", onChange);
+  }, []);
 
   const theme = useMemo(
     () =>
