@@ -143,9 +143,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  width: min(70%, 520px);
+  width: min(82%, 700px);
   height: auto;
-  max-height: 75vh;
+  max-height: 88vh;
   pointer-events: none;
 }
 
@@ -194,7 +194,7 @@
 
   .bg {
     opacity: 0.35;
-    width: min(85%, 400px);
+    width: min(92%, 520px);
   }
 }
 
