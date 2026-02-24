@@ -13,13 +13,10 @@ body {
 
 
 h2 {
-   font-style: normal;
+  font-style: normal;
   font-weight: 400;
-  font-size: 48px; 
-  line-height: 77px;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.3;
   text-align: center;
-  color: #7B1384;
-  align-items: center;
-  align-self: center;
-  justify-self: auto;
+  color: #7b1384;
 }

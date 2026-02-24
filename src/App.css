@@ -1,135 +1,205 @@
-.App {
-  text-align: center;
-}
+/* --- Theme: purple #7B1384 / #8c0099, Baloo Bhai --- */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.walletAddress {
-  background-color: #F3DDDD;
-  border: 0.2px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50px 0px 0px 50px;
-  outline: none;
-  opacity: 0.9;
-  padding: 12px 20px 12px 20px;
-}
-
-.searchButton {
-  padding: 12px 20px 12px 20px !important;
-  font-size: 1.5rem !important;
-}
-
-input[type="text"] {
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: #7B1384;
-}
-
-.bg {
+.sr-only {
   position: absolute;
-  right: 0;
-  top: 35%;
-  z-index: -1;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Title: responsive typography */
+.appTitle {
+  font-family: "Baloo Bhai", Roboto, sans-serif !important;
+  font-size: clamp(1.75rem, 5vw, 3rem) !important;
+  line-height: 1.2 !important;
+  text-align: center;
+  color: #7b1384 !important;
+  padding-top: clamp(1rem, 5vw, 5rem) !important;
+}
+
+/* Search form & input group */
+.searchForm {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .walletBox {
   display: flex;
   flex-direction: column;
-  padding-top: 10vh;
+  padding-top: clamp(2rem, 8vh, 10vh);
   align-items: center;
-  justify-self: auto;
+  gap: 0.75rem;
 }
 
-.labelText, .idle, .search {
-  font-family: 'Baloo Bhai';
-  font-style: normal;
+.searchInputGroup {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  align-items: stretch;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(123, 19, 132, 0.2);
+  overflow: hidden;
+  background: #f3dddd;
+  border: 1px solid rgba(123, 19, 132, 0.25);
+}
+
+.walletAddress {
+  flex: 1;
+  min-width: 0;
+  background-color: #f3dddd;
+  border: none;
+  box-shadow: none;
+  border-radius: 50px 0 0 50px;
+  outline: none;
+  opacity: 0.95;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+  color: #7b1384;
+}
+
+.walletAddress::placeholder {
+  color: rgba(123, 19, 132, 0.5);
+}
+
+.walletAddress:focus {
+  opacity: 1;
+}
+
+.walletAddress:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Search button: theme-matched, right pill */
+.searchButton {
+  flex-shrink: 0;
+  padding: 12px 24px !important;
+  font-family: "Baloo Bhai", Roboto, sans-serif !important;
+  font-size: clamp(1rem, 2.2vw, 1.25rem) !important;
+  font-weight: 700 !important;
+  border-radius: 0 50px 50px 0 !important;
+  background: linear-gradient(145deg, #9c27b0 0%, #7b1384 50%, #5c0d63 100%) !important;
+  color: #fff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 8px rgba(123, 19, 132, 0.4) !important;
+  text-transform: none !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.searchButton:hover:not(:disabled) {
+  background: linear-gradient(145deg, #ab47bc 0%, #8c0099 50%, #7b1384 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 14px rgba(123, 19, 132, 0.5) !important;
+  transform: translateY(-1px);
+}
+
+.searchButton:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.searchButton:disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed;
+}
+
+.labelText,
+.idle,
+.search {
+  font-family: "Baloo Bhai", Roboto, sans-serif;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 51px;
-  color: #7B1384;
-  align-self: flex-start;
-  margin: auto;
-  stroke: black;
-  stroke-width: 10px;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  line-height: 1.4;
+  color: #7b1384;
+  margin: 0;
+}
+
+.labelText {
+  align-self: center;
+  text-align: center;
 }
 
 .idle {
-  margin-left: 31vw;
-  margin-top: 5vh;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  width: 100%;
 }
 
+.search {
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+/* Background decorative SVG – centered so the figure stays near viewport center */
+.bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: min(70%, 520px);
+  height: auto;
+  max-height: 75vh;
+  pointer-events: none;
+}
+
+/* --- Responsive: mobile-first overrides --- */
 @media screen and (max-width: 700px) {
   .walletBox {
-    width: 80%;
-  }
-
-  input[type="text"] {
-    font-weight: 900;
-  }
-
-  .walletBox {
-    align-items: flex-start;
     width: 100%;
-    margin-left: 0;
-    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: stretch;
+  }
+
+  .searchInputGroup {
+    flex-direction: column;
+    gap: 0.75rem;
+    border-radius: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
   .walletAddress {
-    border-radius: 50px 50px 50px 50px;
-    width: 90%;
+    border-radius: 24px;
+    border: 1px solid rgba(123, 19, 132, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 14px 20px;
   }
 
   .searchButton {
-    border-radius: 50px 50px 50px 50px !important;
-    margin-top: 5px !important;
-    margin-right: 5px !important;
-    margin-bottom: 10vh !important;
+    border-radius: 24px !important;
+    padding: 14px 24px !important;
   }
 
-  .labelText, .idle {
+  .labelText {
     margin-left: 0;
+    align-self: center;
   }
-  .search, .idle {
-    margin-left: 10vw;
-    margin-top: 0;
-    width: 100%;
-    margin: 0;
+
+  .idle,
+  .search {
+    margin-left: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .bg {
-    opacity: 0.4;
+    opacity: 0.35;
+    width: min(85%, 400px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .walletAddress {
+    font-size: 16px; /* avoids zoom on iOS */
   }
 }
